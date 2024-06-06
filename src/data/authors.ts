@@ -31,5 +31,11 @@ export const authors: Props[] = [
     slug: "satoru-gojo",
     image: "./src/assets/authors/mario.webp",
     bio: "Mario is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
+  },
+  {
+    name: "Panha Bot",
+    slug: "panha-bot",
+    image: "./src/assets/authors/mario.webp",
+    bio: "Panha Bot is a Staff Engineer specialising in Frontend at Quad, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
   }
 ];

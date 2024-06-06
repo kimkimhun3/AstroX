@@ -11,6 +11,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
+        charter: ['Charter', 'serif'],
       },
       aspectRatio: {
         "4/3": "4 / 3",
