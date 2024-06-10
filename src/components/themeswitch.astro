@@ -13,3 +13,17 @@ import { ThemeSwitch } from "astro-color-scheme";
     </select>
   </div>
 </ThemeSwitch>
+
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    const themeSwitch = document.getElementById('themeSwitch');
+    
+    themeSwitch.addEventListener('change', function() {
+      const selectedTheme = themeSwitch.value;
+      document.documentElement.setAttribute('data-theme', selectedTheme);
+      const event = new Event('themeChange');
+      document.dispatchEvent(event);
+    });
+  });
+</script>

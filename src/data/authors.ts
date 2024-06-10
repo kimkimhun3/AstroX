@@ -35,7 +35,7 @@ export const authors: Props[] = [
   {
     name: "Panha Bot",
     slug: "panha-bot",
-    image: "./src/assets/authors/mario.webp",
+    image: "./src/assets/authors/bot.jpg",
     bio: "Panha Bot is a Staff Engineer specialising in Frontend at Quad, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
   }
 ];

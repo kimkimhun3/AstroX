@@ -9,7 +9,7 @@ category: "technology"
 draft: true
 # author slug: choose from "./src/data/authors.js"
 author: "mario-sanchez"
-tags: [tag1, tag2, tag3]
+tags: [tailwindcss]
 ---
 
 Your content here

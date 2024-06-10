@@ -8,6 +8,8 @@ import { categories } from "@data/category";
 import Layout from "@layouts/Layout.astro";
 import { getFormattedDate } from "@utils/all";
 import { CollectionEntry, getCollection } from "astro:content";
+import PostComments from "@components/PostComments.astro";
+
 
 import type { Author } from "@data/authors";
 import type { Category } from "@data/category";
@@ -96,7 +98,7 @@ const category = categories.find(
           sizes="(max-width: 640px) 90vw, 480px"
           aspectRatio="16:9"
           width={1024}
-          heignt={576}
+          height={576}
           alt="Thumbnail"
           loading="eager"
           class="w-full"
@@ -118,6 +120,9 @@ const category = categories.find(
             ))
           }
         </div>
+      </div>
+      <div>
+        <PostComments/>
       </div>
 
       <div class="flex justify-center mt-7 mb-7">
