@@ -1,5 +1,5 @@
 ---
-title: "Basic computer network"
+title: "PythonはGuido van Rossumが設計した動的型付け言語です。Pythonは多くのデベロッパーによってライブラリの開発が行われており、Webページから科学研究まで幅広く利用されています。"
 excerpt: "We always knew but now we know. The tech elite mean to leave us all behind."
 publishDate: "2021-12-27T11:39:36.050Z"
 image: "https://cdn.pixabay.com/photo/2017/07/12/05/52/equality-2495950_1280.jpg"

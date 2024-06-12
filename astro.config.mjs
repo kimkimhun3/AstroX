@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-
+import preact from "@astrojs/preact";
 import { remarkReadingTime } from "./src/utils/all";
 
 export default defineConfig({
@@ -15,11 +15,13 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   integrations: [
+    preact({ compat: true }),
     tailwind(),
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
     mdx(),
-    sitemap(),
-  ],
+    sitemap()
+  ]
+
 });

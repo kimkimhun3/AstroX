@@ -6,6 +6,10 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+				horizonAnimated: "url('/assets/svg/backgrounds/horizon-animated.svg')",
+				horizon: "url('/assets/svg/backgrounds/horizon.svg')",
+			},
       colors: {
         gray: colors.neutral,
       },

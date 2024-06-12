@@ -1,0 +1,70 @@
+---
+import Container from '@components/container.astro';
+import Postlist from '@components/postlist.astro';
+import Layout from '@layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { authors } from '@data/authors'; // Import authors array
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const authorSlugs = [...new Set(allPosts.map((post) => post.data.author))];
+  return authorSlugs.map((slug) => ({
+    params: { author: slug },
+  }));
+}
+
+const { author } = Astro.params;
+const allPosts = await getCollection('blog');
+const filteredPosts = allPosts.filter((post) => post.data.author === author);
+const authorData = authors.find((authorItem) => authorItem.slug === author);
+const authorName = authorData?.name || 'Unknown Author';
+const authorSlug = authorData?.slug || '';
+
+// Generate list of unique authors for navigation
+const authorSlugs = [...new Set(allPosts.map((post) => post.data.author))];
+const sortedAuthors = authorSlugs.map((slug) => authors.find((authorItem) => authorItem.slug === slug));
+
+---
+
+<Layout title={`Posts by ${authorName}`}>
+  <Container>
+
+
+    <main>
+      <div>
+        <div class="lg:text-left">
+          <h1 class="text-4xl tracking-normal text-balance font-charter font-display text-black md:text-5xl text-brand-primary dark:text-white">
+            {authorName}'s Posts
+          </h1>
+        </div>  
+      </div>
+      {filteredPosts.length > 0 ? (
+        <div class="grid gap-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3 mt-9">
+          {filteredPosts.map((post) => (
+            <Postlist post={post} aspect="square" />
+          ))}
+        </div>
+      ) : (
+        <p>No posts found for this author.</p>
+      )}
+    </main>
+    <div class="mb-20 mt-20">
+      <a href="/" class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:text-blue-500 bg-blue-50 hover:bg-blue-100">
+        &larr; Back Home
+      </a>
+    </div>
+    <div class="mb-1 mt-10">
+      
+      <h1 class="text-4xl tracking-normal text-balance font-charter font-display text-black md:text-4xl text-brand-primary dark:text-white">More Authors &#128057;</h1>
+      <nav class="mb-6">
+        <ul class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap mt-5 mb-7 pt-5">
+          {sortedAuthors.map((authorItem) => (
+            <li class="inline-flex items-center uppercase mx-auto hover:text-blue-500 text-xs font-medium text-black dark:text-white">
+              <a href={`/authors/${authorItem?.slug || ''}`}>{authorItem?.name || 'Unknown Author'}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </Container>
+</Layout>

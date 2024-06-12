@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1920 1080">
+  <style>
+    /* CSS styles */
+    circle {
+      stroke: #000;
+      stroke-width: 2;
+    }
+  </style>
+
+  <!-- SVG Content -->
+  <rect x="0" y="0" width="100%" height="100%" fill="#fff" />
+
+  <!-- Red Circle -->
+  <circle cx="50" cy="50" r="5" fill="#f00">
+    <animate attributeName="cx" values="50; 1870; 50" dur="15s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="50; 50; 50" dur="15s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 0" dur="15s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Green Circle -->
+  <circle cx="150" cy="100" r="8" fill="#0f0">
+    <animate attributeName="cx" values="150; 1770; 150" dur="17s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="100; 100; 100" dur="17s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 0" dur="17s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Blue Circle -->
+  <circle cx="250" cy="50" r="4" fill="#00f">
+    <animate attributeName="cx" values="250; 1700; 250" dur="13s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="50; 50; 50" dur="13s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0; 1; 0" dur="13s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Additional Circles -->
+  <g id="additionalCircles">
+    <!-- JavaScript for adding circles dynamically -->
+    <script type="text/ecmascript">
+      // Function to generate a random number between min and max
+      function getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      // Function to generate a random color
+      function getRandomColor() {
+        return '#' + Math.floor(Math.random() * 16777215).toString(16);
+      }
+
+      // Function to add additional circles
+      function addAdditionalCircles() {
+        var svg = document.getElementById('additionalCircles');
+        for (var i = 0; i < 40; i++) {
+          var circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+          var startX = getRandom(0, 1920);
+          var startY = getRandom(0, 1080);
+          var endX = getRandom(0, 1920);
+          var endY = getRandom(0, 1080);
+          var duration = getRandom(10, 50); // Random duration between 10s and 50s
+          circle.setAttribute('cx', startX);
+          circle.setAttribute('cy', startY);
+          circle.setAttribute('r', getRandom(3, 20)); // Decreased size
+          circle.setAttribute('fill', getRandomColor());
+          circle.innerHTML = `
+            <animate attributeName="cx" values="${startX}; ${endX}; ${startX}" dur="${duration}s" repeatCount="indefinite" />
+            <animate attributeName="cy" values="${startY}; ${endY}; ${startY}" dur="${duration}s" repeatCount="indefinite" />
+            <animate attributeName="r" values="${circle.getAttribute('r')}; ${getRandom(4, 20)}; ${circle.getAttribute('r')}" dur="${duration}s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0; 1; 0" dur="${duration}s" repeatCount="indefinite" />
+          `;
+          svg.appendChild(circle);
+        }
+      }
+
+      // Add additional circles when the document is loaded
+      window.onload = addAdditionalCircles;
+    </script>
+  </g>
+</svg>
