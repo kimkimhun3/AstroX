@@ -7,21 +7,17 @@ import sitemap from "@astrojs/sitemap";
 import preact from "@astrojs/preact";
 import { remarkReadingTime } from "./src/utils/all";
 
+
+// https://astro.build/config
 export default defineConfig({
-  site: "https://stablo-astro.web3templates.com",
+  site: "https://sorryiloveyou.web.app",
   markdown: {
     remarkPlugins: [remarkReadingTime],
-    rehypePlugins: ["rehype-plugin-image-native-lazy-loading"],
-    extendDefaultPlugins: true,
+    extendDefaultPlugins: true
   },
-  integrations: [
-    preact({ compat: true }),
-    tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
-    mdx(),
-    sitemap()
-  ]
-
+  integrations: [preact({
+    compat: true
+  }), tailwind(), image({
+    serviceEntryPoint: "@astrojs/image/sharp"
+  }), mdx(), sitemap()]
 });

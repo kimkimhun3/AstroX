@@ -23,36 +23,48 @@ const sortedTags = tags.sort((a, b) => a.localeCompare(b)); // Sort tags alphabe
     <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-gray-700"></div>
     <div class="blur-[106px] h-32 bg-gradient-to-r from-gray-400 to-cyan-300 dark:to-gray-600"></div>
   </div>
-  <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-10 lg:pt-10">
+  <div class="absolute inset-0 z-0">
+    <svg class="h-full w-full">
+      <defs>
+        <filter id="blur-filter" x="100%" y="80%" width="100%" height="20%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+        </filter>
+        <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" class="text-gray-300 dark:text-gray-100" fill="currentColor" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dot-pattern)" filter="url(#blur-filter)" />
+      <rect width="100%" height="100%" fill="url(#dot-pattern)" />
+    </svg>
+  </div>
+  <div class="relative px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-8xl lg:px-10 lg:pt-10">
     <div class="lg:text-center">
-      <h1 class="text-4xl tracking-normal text-balance font-charter font-display text-black md:text-8xl text-brand-primary dark:text-white">
-        A simple blog built with
-        AstroX and Tailwind CSS
+      <h1 class="text-5xl tracking-normal text-balance font-charter font-display text-black md:text-5xl text-brand-primary dark:text-white">
+        At <span class="font-bold text-blue-500">Hoooon.me</span>, I share coding tips, career advice and insights into my work experiences.
       </h1>
     </div>  
   </div>
-  <Container>
-    <nav>
-      <div class="flex flex-wrap justify-between md:gap-10 md:flex-nowrap">
-        {
-          sortedTags.map((tag) => (
-            <li class="inline-flex items-center uppercase mx-auto hover:text-blue-500 text-xs font-medium text-black dark:text-white">
-              <a href={`/tags/${tag}`}>{tag}</a>
-            </li>
-          ))
-        }
-      </div>
-    </nav>
-    </Container>
+  
+
 </section>
+<Container>
+  <nav>
+    <div class="flex flex-wrap justify-between md:gap-5 md:flex-nowrap">
+      {sortedTags.map((tag) => (
+        <li class="inline-flex items-center uppercase mx-auto hover:text-blue-500 text-xs font-medium text-black dark:text-white">
+          <a href={`/tags/${tag}`}>#{tag}</a>
+        </li>
+      ))}
+    </div>
+  </nav>
+</Container>
 
 <!-- ------------------------------------------------------------------------------------------------------------------- -->
 
 <Layout title="">
-  
   <Container>
     <main>
-      <div class="grid gap-10 lg:gap-10 md:grid-cols-2">
+      <div class="grid gap-5 lg:gap-10 md:grid-cols-2">
         {
           latestPosts
             .slice(0, 2)
@@ -64,7 +76,7 @@ const sortedTags = tags.sort((a, b) => a.localeCompare(b)); // Sort tags alphabe
       <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
         {
           latestPosts
-            .slice(0,6)
+            .slice(2,8)
             .map((post) => <Postlist post={post} aspect="square" />)
         }
       </div>

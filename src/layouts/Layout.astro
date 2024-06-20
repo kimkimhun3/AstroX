@@ -24,38 +24,60 @@ const makeTitle = title
 ---
 
 <!DOCTYPE html>
-<html lang="jap">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon1.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <SEO
       title={makeTitle}
       description={desc ||
-        "Blog Starter Template built with Astro & MDX."}
+        "Hoooon Starter Blog"}
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@hoooon",
+        site: "@hoooon",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Stablo - Blog Starter Template for Astro`,
+          title: `Hoooon - Blog`,
           image: resolvedOGImage,
         },
         image: {
-          alt: "Stablo Screenshot",
+          alt: "Hoooon Screenshot",
         },
       }}
     />
+  <script>
+    // public/firebase-init.js
+
+import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCIs_wr1kFNFMX156TSLy8h8JqMpskwGDg",
+  authDomain: "sorryiloveyou.firebaseapp.com",
+  projectId: "sorryiloveyou",
+  storageBucket: "sorryiloveyou.appspot.com",
+  messagingSenderId: "1034466506886",
+  appId: "1:1034466506886:web:75fab4606a91cd9fe6b907",
+  measurementId: "G-TNZ4XJE5N3"
+};
+
+if (typeof window !== "undefined") {
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+}
+
+  </script>
   </head>
   <body>
+    <!-- firebase deploy --only hosting:sorryiloveyou -->
     <!-- <Navbar /> -->
     <slot />
 

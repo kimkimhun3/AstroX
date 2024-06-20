@@ -9,12 +9,6 @@ export type Author = Props;
 
 export const authors: Props[] = [
   {
-    name: "Mario Sanchez",
-    slug: "mario-sanchez",
-    image: "./src/assets/authors/mario.webp",
-    bio: "Mario is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
-  },
-  {
     name: "Joshua Wood",
     slug: "joshua-wood",
     image: "./src/assets/authors/joshua.webp",
@@ -29,13 +23,27 @@ export const authors: Props[] = [
   {
     name: "Satoru Gojo",
     slug: "satoru-gojo",
-    image: "./src/assets/authors/mario.webp",
-    bio: "Mario is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
+    image: "./src/assets/authors/gojo.png",
+    bio: "Mario is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity.",
   },
   {
     name: "Panha Bot",
     slug: "panha-bot",
     image: "./src/assets/authors/bot.jpg",
-    bio: "Panha Bot is a Staff Engineer specialising in Frontend at Quad, as well as being a co-founder of Acme and the content management system Sanity. Prior to this, he was a Senior Engineer at Apple.",
+    bio: "Panha Bot is a Staff Engineer specialising in Frontend at Quad, as well as being a co-founder of Acme and the content management system Sanity.",
+  },
+  {
+    name: "Kim Hoon",
+    slug: "kim-hoon",
+    image: "./src/assets/authors/kim.jpg",
+    bio: "Hoooon is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity.",
+  },
+  {
+    name: "Seng hout",
+    slug: "seng-hout",
+    image: "https://cdn.pixabay.com/photo/2024/02/17/00/18/cat-8578562_1280.jpg",
+    bio: "Hoooon is a Staff Engineer specialising in Frontend at Vercel, as well as being a co-founder of Acme and the content management system Sanity.",
   }
 ];
+
+

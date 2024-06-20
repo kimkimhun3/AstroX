@@ -2,7 +2,7 @@
 title: "2023 Rewinds: My life is getting better, and I'm not ready for it"
 excerpt: "As the curtain falls on 2023, I find myself reflecting on a year that has been nothing short of transformative. The saying goes, “My life is getting better, and I’m not ready for it.” This sentiment encapsulates the whirlwind of happiness, love, home, family, a fantastic circle of friends, job opportunities, travel adventures, and profound healing that has graced my journey."
 publishDate: "2022-12-31T11:39:36.050Z"
-image: "https://miro.medium.com/v2/resize:fit:786/format:webp/1*vkwGoAJ4O88gvLRyuv1jzw.png"
+image: "https://cdn.pixabay.com/photo/2023/07/28/11/45/landscapes-8155111_1280.jpg"
 category: "lifestyle"
 author: "panha-bot"
 tags: [lifestyle]

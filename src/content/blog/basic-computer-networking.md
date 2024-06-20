@@ -5,7 +5,7 @@ publishDate: "2021-12-27T11:39:36.050Z"
 image: "https://cdn.pixabay.com/photo/2017/07/12/05/52/equality-2495950_1280.jpg"
 category: "technology"
 author: "erika-oliver"
-tags: [netorking]
+tags: [netorwking]
 ---
 # Basic Computer Networking
 

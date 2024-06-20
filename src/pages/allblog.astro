@@ -12,7 +12,7 @@ import { latestPosts } from "@utils/content";
 // console.log(posts[0].frontmatter.image);
 ---
 <section >
-  <div class="px-8 py-12 md:px-12 mx-auto lg:pb-24 max-w-7xl lg:px-32   lg:pt-32">
+  <div class="px-8 py-12 md:px-12 mx-auto lg:pb-14 max-w-7xl lg:px-32   lg:pt-12">
     <div class="lg:text-center">
       <h1 class="text-4xl tracking-normal text-balance font-charter font-display text-black md:text-8xl text-brand-primary dark:text-white">
         All Blogs
@@ -33,7 +33,7 @@ import { latestPosts } from "@utils/content";
             ))
         }
       </div> -->
-      <div class="grid gap-10 mt-10 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
+      <div class="grid gap-10 mt-5 lg:gap-10 md:grid-cols-2 xl:grid-cols-3">
         {
           latestPosts
             .slice(0,1000)
@@ -43,9 +43,9 @@ import { latestPosts } from "@utils/content";
     </main>
     <div class="flex justify-center mt-7 mb-7">
       <a
-        href="/allblog"
+        href="/"
         class="px-5 py-3 text-sm text-blue-600 transition rounded-md dark:text-blue-500 bg-blue-50 hover:bg-blue-100">
-        View all posts
+        ← Back Home
       </a>
     </div>
   </Container>
