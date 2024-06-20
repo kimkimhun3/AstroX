@@ -4,13 +4,13 @@ import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCIs_wr1kFNFMX156TSLy8h8JqMpskwGDg",
-  authDomain: "sorryiloveyou.firebaseapp.com",
-  projectId: "sorryiloveyou",
-  storageBucket: "sorryiloveyou.appspot.com",
-  messagingSenderId: "1034466506886",
-  appId: "1:1034466506886:web:75fab4606a91cd9fe6b907",
-  measurementId: "G-TNZ4XJE5N3"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 if (typeof window !== "undefined") {
